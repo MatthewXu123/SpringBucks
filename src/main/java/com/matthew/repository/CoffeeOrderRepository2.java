@@ -14,6 +14,10 @@ public interface CoffeeOrderRepository2 extends BaseRepository<CoffeeOrder, Long
 	 */
 	List<CoffeeOrder> findByCustomerOrderById(String customer);
 	
+	/**
+	 * @param name
+	 * @return
+	 */
 	List<CoffeeOrder> findByItems_Name(String name);
 
 }
