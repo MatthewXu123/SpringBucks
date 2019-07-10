@@ -19,6 +19,7 @@ import lombok.ToString;
 @Table(name = "T_MENU")
 @Builder
 @Data
+//不加callsuper，只会打印当前类。
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,6 +30,7 @@ public class Coffee extends BaseEntity implements Serializable{
 	private String name;
 	
 	@Column
+	//如果用PersistentMoneyMinorAmount，那么数据类型会从decimal变成bigint
 	@Type(type = "org.jadira.usertype.moneyandcurrency.joda.PersistentMoneyAmount", 
 	parameters = {@org.hibernate.annotations.Parameter(name = "currencyCode",value = "CNY")})
 	private Money price;
